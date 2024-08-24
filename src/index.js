@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 
-// Get the port number from environment variables or default to 3000
-const port = process.env.PORT || 3000;
+// Get the port number from environment variables or default to 8080
+const port = process.env.PORT || 8080; // Default to 8080 for Render
+
 
 // MongoDB connection string from environment variables
 const mongoURI = process.env.MONGO_URI;
