@@ -1,0 +1,16 @@
+{
+  "name": "alma-youtube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "create-db": "node src/createDatabase.js",
+    "prestart": "npm run create-db"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.4"
+  }
+}
