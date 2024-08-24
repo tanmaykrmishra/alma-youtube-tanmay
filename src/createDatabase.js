@@ -1,14 +1,11 @@
+require("dotenv").config(); // Load environment variables from .env file
 const mongoose = require("mongoose");
 const Subscriber = require("./models/subscribers");
-require("dotenv").config(); // Load environment variables from .env file
 
-const mongoURI = process.env.MONGO_URI;
+const mongoURI = process.env.MONGO_URI; // Ensure this is correctly set
 
 mongoose
-  .connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(mongoURI) // Remove deprecated options
   .then(async () => {
     console.log("Connected to MongoDB");
 

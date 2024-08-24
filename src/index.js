@@ -18,10 +18,7 @@ app.use("/subscribers", subscriberRoutes);
 
 // Connect to MongoDB
 mongoose
-  .connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(mongoURI)
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(port, () => {
@@ -31,3 +28,8 @@ mongoose
   .catch((err) => {
     console.error("Failed to connect to MongoDB", err);
   });
+
+// Add a basic route to check if the server is running
+app.get("/", (req, res) => {
+  res.send("Server is up and running!");
+});
